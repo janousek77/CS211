@@ -4,17 +4,12 @@
 
 
 public class Rectangle{
-  // public static void main(String[] args) {
-  //
-  // }
-
-  int x, y, width, height;
+  private int x, y, width, height;
 
   public Rectangle(int x, int y, int width, int height){
     if(width < 0 || height < 0){
-      throw IllegalArgumentException();
+      throw new IllegalArgumentException();
     }
-
     this.x = x;
     this.y = y;
     this.width = width;
@@ -49,7 +44,7 @@ public class Rectangle{
   }
 
   public boolean contains(int x, int y){
-    return this.x == x && this.y == y;
+    return (x<=this.x+width && x>=this.x && y<=this.y+height && y>=this.y);
   }
 
   public boolean contains(Point p){
@@ -57,11 +52,27 @@ public class Rectangle{
   }
 
   public Rectangle union(Rectangle rect){
-
+    int newX = Math.min(x, rect.x);
+    int newY = Math.min(y, rect.y);
+    int newWidth = Math.max(x + width, rect.x+rect.width)-newX;
+    int newHeight = Math.max(y + height, rect.y+rect.height)-newY;
+    return new Rectangle(newX, newY, newWidth, newHeight);
   }
 
   public Rectangle intersection(Rectangle rect){
-
+    if(this.contains(rect.x, rect.y)
+    || this.contains(rect.x, rect.y+rect.height)
+    || this.contains(rect.x+rect.width, rect.y)
+    || this.contains(rect.x+rect.width, rect.y+rect.height)
+    || ((x+width>=rect.x && y+height>=rect.y)||(x+width<=rect.x && y+height<=rect.y))){
+      int newX = Math.max(x, rect.x);
+      int newY = Math.max(y, rect.y);
+      int newWidth = Math.min(x + width - newX, rect.x+rect.width-newX);
+      int newHeight = Math.min(y + height-newY, rect.y+rect.height-newY);
+      return new Rectangle(newX, newY, newWidth, newHeight);
+    } else {
+      return new Rectangle(0,0,0,0);
+    }
   }
 
 }
