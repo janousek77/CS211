@@ -1,4 +1,4 @@
-public class Cylinder implements Shape{
+public class Cylinder{
   double radius, height;
 
   public Cylinder(double radius, double height){
@@ -14,10 +14,12 @@ public class Cylinder implements Shape{
     return height;
   }
 
+  // A=2πrh+2πr2
   public double getArea(){
     return 2*Math.PI*radius*height+2*Math.PI*radius*radius;
   }
 
+  // V=πr2h
   public double getVolume(){
     return Math.PI*radius*radius*height;
   }

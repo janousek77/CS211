@@ -13,5 +13,10 @@ public class Test{
     System.out.println("Cylinder height: " + three.getHeight());
     System.out.println("Cylinder surface area: " + three.getArea());
     System.out.println("Cylinder volume: " + three.getVolume());
+    Cone four = new Cone(5, 6);
+    // System.out.println("Cone radius: " + four.getRadius());
+    // System.out.println("Cone height: " + four.getHeight());
+    System.out.println("Cone surface area: " + four.getArea());
+    System.out.println("Cone volume: " + four.getVolume());
   }
 }

@@ -1,11 +1,5 @@
-// Chris Janousek
-// CS211 Assignment HW0 chapter 8 #18-22
-// 2/7/2018
-
-
-public class Rectangle{
-  // #18
-  private int x, y, width, height;
+import java.awt.Point;
+public class Rectangle{  private int x, y, width, height;
 
   public Rectangle(int x, int y, int width, int height){
     if(width < 0 || height < 0){
@@ -37,7 +31,6 @@ public class Rectangle{
     return "Rectangle[x=" + x + ",y=" + y + ",width=" + width + ",height=" + height + "]";
   }
 
-  // #19
   public Rectangle(Point p, int width, int height){
     this.x = p.x;
     this.y = p.y;
@@ -45,7 +38,6 @@ public class Rectangle{
     this.height = height;
   }
 
-  // #20
   public boolean contains(int x, int y){
     return (x<=this.x+width && x>=this.x && y<=this.y+height && y>=this.y);
   }
@@ -54,7 +46,6 @@ public class Rectangle{
     return contains(p.x, p.y);
   }
 
-  // #21
   public Rectangle union(Rectangle rect) {
       int newX = Math.min(this.x, rect.x);
       int newY = Math.min(this.y, rect.y);
@@ -63,9 +54,8 @@ public class Rectangle{
       return new Rectangle(newX, newY, newWidth, newHeight);
   }
 
-  // #22
   public Rectangle intersection(Rectangle rect){
-    if(x+width>=rect.x && y+height>=rect.y){
+    if(x+width>=rect.x && y+height>=rect.{
       int newX = Math.max(x, rect.x);
       int newY = Math.max(y, rect.y);
       int newWidth = Math.min(x + width - newX, rect.x+rect.width-newX);
