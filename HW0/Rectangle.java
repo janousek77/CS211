@@ -32,10 +32,7 @@ public class Rectangle{  private int x, y, width, height;
   }
 
   public Rectangle(Point p, int width, int height){
-    this.x = p.x;
-    this.y = p.y;
-    this.width = width;
-    this.height = height;
+    this(p.x,p.y,width,height);
   }
 
   public boolean contains(int x, int y){
