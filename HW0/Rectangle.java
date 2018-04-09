@@ -55,7 +55,7 @@ public class Rectangle{  private int x, y, width, height;
   }
 
   public Rectangle intersection(Rectangle rect){
-    if(x+width>=rect.x && y+height>=rect.{
+    if(x+width>=rect.x && y+height>=rect.y){
       int newX = Math.max(x, rect.x);
       int newY = Math.max(y, rect.y);
       int newWidth = Math.min(x + width - newX, rect.x+rect.width-newX);
