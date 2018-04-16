@@ -1,18 +1,18 @@
-public class Cone extends Cylinder{
-  double radius, height;
+public class Cone extends Cylinder implements Shape{
 
-  public Cone(double radius, double height){
-    this.radius = radius;
-    this.height = height;
+  public Cone(double r, double h){            // Cone constructor
+    super(r,h);
   }
 
-  // A=πr(r+h2+r2)
-  public double getArea(){
-    return Math.PI*radius*(radius+Math.sqrt(height*height+radius*radius));
+  public double getArea(){                    // Returns the area of the Cone
+    return Math.PI*radius*(radius+Math.sqrt(Math.pow(height,2)+Math.pow(radius,2)));
   }
 
-  // V=πr2h/3
-  public double getVolume(){
-    return Math.PI*radius*radius*height/3;
+  public double getVolume(){                  // Returns the volume of the Cone using the super() method and dividing by 3
+    return super.getVolume()/3;
   }
+
+  public String toString() {                  //toString method to easily identfy field values.
+        return "Cone, has a radius of "+radius+", and a height of "+height+".";
+    }
 }

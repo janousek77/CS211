@@ -1,26 +1,28 @@
-public class Cylinder{
+public class Cylinder implements Shape{
   double radius, height;
 
-  public Cylinder(double radius, double height){
-    this.radius = radius;
-    this.height = height;
+  public Cylinder(double r, double h){           // Cylinder constructor
+    radius=r;
+    height=h;
   }
 
-  public double getRadius(){
+  public double getRadius(){                      // returns the radius
     return radius;
   }
 
-  public double getHeight(){
+  public double getHeight(){                      // return the height
     return height;
   }
 
-  // A=2πrh+2πr2
-  public double getArea(){
-    return 2*Math.PI*radius*height+2*Math.PI*radius*radius;
+  public double getArea(){                        // returns the area A=2πrh+2πr2
+    return 2*Math.PI*radius*height+2*Math.PI*Math.pow(radius,2);
   }
 
-  // V=πr2h
-  public double getVolume(){
-    return Math.PI*radius*radius*height;
+  public double getVolume(){                      // returns the volume V=πr2h.
+    return Math.PI*Math.pow(radius,2)*height;
   }
+
+  public String toString(){	                      //toString method to easily identfy field values.
+    return "Cylinder, has a radius of "+radius+", and a height of "+height+".";
+    }
 }
