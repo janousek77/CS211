@@ -1,0 +1,98 @@
+import java.util.*;
+public class Test{
+  public static void main(String[] args) {
+    List<Integer> l1 = new LinkedList<>();
+    List<Integer> l2 = new LinkedList<>();
+    l1.add(1);
+    l1.add(2);
+    l1.add(3);
+    l1.add(4);
+    l1.add(5);
+    l2.add(6);
+    l2.add(7);
+    l2.add(8);
+    l2.add(9);
+    l2.add(10);
+    l2.add(11);
+    l2.add(12);
+    System.out.println();
+    System.out.println("Alternate method test");
+    System.out.println("First list: "+l1);
+    System.out.println("Second list: "+l2);
+    System.out.print("Alternate list: ");
+    System.out.println(Alternate.alternate(l1,l2));
+    System.out.println();
+
+    List<Integer> l3 = new LinkedList<>();
+    l3.add(15);
+    l3.add(1);
+    l3.add(6);
+    l3.add(12);
+    l3.add(-3);
+    l3.add(4);
+    l3.add(8);
+    l3.add(21);
+    l3.add(2);
+    l3.add(30);
+    l3.add(-1);
+    l3.add(9);
+    System.out.println("Partition method Test");
+    System.out.println("List before: "+l3);
+    System.out.print("List after using a value of 5: ");
+    System.out.println(Partition.partition(l3, 5));
+    System.out.println();
+
+    List<Integer> l4 = new LinkedList<>();
+    l4.add(3);
+    l4.add(3);
+    l4.add(3);
+    l4.add(4);
+    l4.add(4);
+    l4.add(5);
+    l4.add(6);
+    l4.add(7);
+    l4.add(7);
+    l4.add(8);
+    l4.add(9);
+    l4.add(9);
+    System.out.println("CountUnique method Test");
+    System.out.println("List before: "+l4);
+    System.out.print("Number of unique elements in list: ");
+    System.out.println(CountUnique.countUnique(l4));
+    System.out.println();
+
+    List<String> l5 = new LinkedList<>();
+    l5.add("apple");
+    l5.add("bear");
+    l5.add("cow");
+    l5.add("longer");
+    l5.add("longest");
+    l5.add("longest");
+    System.out.println("MaxLength method test");
+    System.out.println("List used: "+l5);
+    System.out.print("The length of the longest string is: ");
+    System.out.println(MaxLength.maxLength(l5));
+    System.out.println();
+
+    Map<String, String> one = new TreeMap<>();
+    Map<String, String> two = new TreeMap<>();
+    one.put("Marty", "Stepp");
+    one.put("Stuart", "Reges");
+    one.put("Jessica", "Miller");
+    one.put("Amanda", "Camp");
+    one.put("Hal", "Perkins");
+    two.put("Kendrick", "Perkins");
+    two.put("Stuart", "Reges");
+    two.put("Jessica", "Miller");
+    two.put("Bruce", "Reges");
+    two.put("Hal", "Perkins");
+    System.out.println("IsUnique method test");
+    System.out.println("Map 1: "+one);
+    System.out.println("Map 2: "+two);
+    System.out.print("Every map 1 key has a unique value: ");
+    System.out.println(IsUnique.isUnique(one));
+    System.out.print("Every map 2 key has a unique value: ");
+    System.out.println(IsUnique.isUnique(two));
+    System.out.println();
+  }
+}
